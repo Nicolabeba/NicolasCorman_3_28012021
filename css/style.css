@@ -41,7 +41,7 @@ header img {
 }
 .about h3 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   width: 90%;
   margin: 2rem auto auto auto;
 }
@@ -58,6 +58,147 @@ header img {
   background: linear-gradient(#FF79DA, #9356DC);
   border: none;
   font-size: 1rem;
+}
+.about button:hover {
+  cursor: pointer;
+  background: linear-gradient(#ffb0e9, #a587cb);
+}
+
+section {
+  padding-bottom: 40px;
+}
+section h3 {
+  font-size: 1.8rem;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  padding-top: 50px;
+}
+
+.fonction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.fonctionBox {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background: #f4f4f4;
+  border-radius: 25px;
+  width: 80%;
+  height: 5rem;
+  margin: 15px;
+  box-shadow: 4px 4px 8px #d3d3d3;
+}
+.fonctionBox :nth-child(1) {
+  width: 21px;
+  height: 21px;
+  border-radius: 25px;
+  background: #9356DC;
+  text-align: center;
+  color: white;
+  position: relative;
+  right: 10px;
+}
+.fonctionBox :nth-child(2) {
+  color: #b6b6b6;
+  margin: 15px;
+}
+.fonctionBox :nth-child(3) {
+  color: black;
+}
+.fonctionBox:hover {
+  background: #eee3fa;
+}
+.fonctionBox:hover :nth-child(2) {
+  color: #9356DC;
+}
+
+.restaurantsContainer {
+  background: #f4f4f4;
+}
+
+.restaurants {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.restaurantsBox {
+  width: 330px;
+  height: 250px;
+  margin: 20px;
+  text-decoration: none;
+  background: white;
+  border-radius: 20px;
+  color: black;
+}
+.restaurantsBox img {
+  width: 330px;
+  height: 170px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  object-fit: cover;
+}
+.restaurantsBox h4 {
+  margin: 8px;
+  font-size: 1.2rem;
+}
+.restaurantsBox p {
+  font-weight: 100;
+  margin: auto auto auto 8px;
+}
+.restaurantsBox i {
+  font-size: 25px;
+  position: relative;
+  left: 280px;
+  bottom: 40px;
+  -webkit-text-stroke: 1px black;
+  font-weight: 800;
+  color: white;
+  transition: all 1000ms;
+}
+.restaurantsBox i:hover {
+  transform: scaleY(1);
+  color: #FF79DA;
+}
+.restaurantsBox aside {
+  position: relative;
+  left: 245px;
+  bottom: 245px;
+  background: #99E2D0;
+  border-radius: 3px;
+  width: fit-content;
+  padding: 5px;
+  color: #215b4d;
+}
+
+footer {
+  background: #3c3b3b;
+  color: white;
+  padding: 30px;
+}
+footer .logo {
+  filter: invert(100%);
+  width: 100px;
+  margin-bottom: 10px;
+}
+footer nav {
+  height: 40px;
+}
+footer a {
+  text-decoration: none;
+  color: white;
+}
+footer nav {
+  display: flex;
+  align-items: center;
+}
+footer nav i {
+  padding-right: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
