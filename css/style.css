@@ -151,7 +151,7 @@ section h3 {
   font-weight: 100;
   margin: auto auto auto 8px;
 }
-.restaurantsBox i {
+.restaurantsBox .far {
   font-size: 25px;
   position: relative;
   left: 280px;
@@ -161,9 +161,8 @@ section h3 {
   color: white;
   transition: all 1000ms;
 }
-.restaurantsBox i:hover {
-  transform: scaleY(1);
-  color: #FF79DA;
+.restaurantsBox .far:hover {
+  color: #c665cb;
 }
 .restaurantsBox aside {
   position: relative;
