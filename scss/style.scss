@@ -16,7 +16,7 @@ $anim-delay: 2s/$num-dish;
     border-radius: 15px;
     text-decoration: none;
     color: black;
-    padding: 10px;
+    padding: 10px 0px 10px 10px;
     padding-bottom: 0px;
     margin: 20px;
     
@@ -38,5 +38,22 @@ body{
 }
 
 @import "./partials/index";
-@import "./partials/menu"
+@import "./partials/menu";
 
+@media screen and (min-width:1105px) {
+    body {
+        max-width: 1105px;
+        margin: auto;
+    }
+
+}
+
+@media screen and (min-width:730px) {
+    .image {
+        height: 40vw;
+        object-fit: cover;
+        position: relative;
+        bottom: 9rem;
+        z-index: -1;
+    }
+}
