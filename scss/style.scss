@@ -6,6 +6,21 @@ $color-primary: #9356DC;
 $color-secondary:#FF79DA;
 $color-terciary:#99E2D0;
 $color-4:#f4f4f4;
+$num-dish: 10;
+$anim-delay: 2s/$num-dish;
+
+@mixin dishShape{
+    min-width: 300px;
+    height: 60px;
+    background: white;
+    border-radius: 15px;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    padding-bottom: 0px;
+    margin: 20px;
+    
+}
 
 :focus {
     outline: 0;
@@ -18,8 +33,10 @@ $color-4:#f4f4f4;
 body{
     margin: 0px;
     font-family: 'Roboto', sans-serif;
+    background-color: $color-4;
 
 }
 
 @import "./partials/index";
+@import "./partials/menu"
 

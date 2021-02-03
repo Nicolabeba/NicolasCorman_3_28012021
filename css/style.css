@@ -11,10 +11,12 @@
 body {
   margin: 0px;
   font-family: "Roboto", sans-serif;
+  background-color: #f4f4f4;
 }
 
 header {
   display: flex;
+  background: white;
 }
 header img {
   margin: auto;
@@ -66,6 +68,7 @@ header img {
 
 section {
   padding-bottom: 40px;
+  background: white;
 }
 section h3 {
   font-size: 1.8rem;
@@ -80,6 +83,7 @@ section h3 {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  background: white;
 }
 
 .fonctionBox {
@@ -198,6 +202,236 @@ footer nav {
 }
 footer nav i {
   padding-right: 15px;
+}
+
+header a {
+  position: relative;
+  left: 2rem;
+  top: 2.5rem;
+  color: black;
+}
+
+.image {
+  padding-bottom: 0px;
+}
+.image img {
+  width: 100%;
+}
+
+.menuContainer {
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  position: relative;
+  bottom: 2rem;
+  padding-top: 2rem;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+}
+.menuContainer button {
+  width: 180px;
+  border-radius: 20px;
+  margin: auto;
+  padding: 13px;
+  color: white;
+  background: linear-gradient(#FF79DA, #9356DC);
+  border: none;
+  font-size: 1rem;
+  margin: 2rem auto 2rem auto;
+}
+.menuContainer button:hover {
+  cursor: pointer;
+  background: linear-gradient(#ffb0e9, #a587cb);
+}
+
+.headMenu {
+  font-family: "Shrikhand", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.headMenu h3 {
+  padding-top: 0px;
+  margin-bottom: 0px;
+}
+.headMenu .far {
+  font-size: 25px;
+  -webkit-text-stroke: 1px black;
+  font-weight: 800;
+  color: #f4f4f4;
+  transition: all 1000ms;
+  padding-right: 1.5rem;
+}
+.headMenu .far:hover {
+  color: #c665cb;
+}
+
+@keyframes appearMenu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes moveMenu {
+  0% {
+    transform: scaleY(0.7);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+.menu h5 {
+  margin-top: 2rem;
+  margin-bottom: 0.2rem;
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  font-weight: 100;
+}
+.menu .underLine {
+  width: 40px;
+  height: 4px;
+  margin-left: 1.5rem;
+  background-color: #99E2D0;
+}
+.menu .animMenu {
+  animation: moveMenu 1s;
+  transform-origin: bottom;
+}
+.menu .animMenu__dish--1 {
+  min-width: 300px;
+  height: 60px;
+  background: white;
+  border-radius: 15px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin: 20px;
+  animation: appearMenu 1s 0.2s ease-in-out both;
+}
+.menu .animMenu__dish--2 {
+  min-width: 300px;
+  height: 60px;
+  background: white;
+  border-radius: 15px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin: 20px;
+  animation: appearMenu 1s 0.4s ease-in-out both;
+}
+.menu .animMenu__dish--3 {
+  min-width: 300px;
+  height: 60px;
+  background: white;
+  border-radius: 15px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin: 20px;
+  animation: appearMenu 1s 0.6s ease-in-out both;
+}
+.menu .animMenu__dish--4 {
+  min-width: 300px;
+  height: 60px;
+  background: white;
+  border-radius: 15px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin: 20px;
+  animation: appearMenu 1s 0.8s ease-in-out both;
+}
+.menu .animMenu__dish--5 {
+  min-width: 300px;
+  height: 60px;
+  background: white;
+  border-radius: 15px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin: 20px;
+  animation: appearMenu 1s 1s ease-in-out both;
+}
+.menu .animMenu__dish--6 {
+  min-width: 300px;
+  height: 60px;
+  background: white;
+  border-radius: 15px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin: 20px;
+  animation: appearMenu 1s 1.2s ease-in-out both;
+}
+.menu .animMenu__dish--7 {
+  min-width: 300px;
+  height: 60px;
+  background: white;
+  border-radius: 15px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin: 20px;
+  animation: appearMenu 1s 1.4s ease-in-out both;
+}
+.menu .animMenu__dish--8 {
+  min-width: 300px;
+  height: 60px;
+  background: white;
+  border-radius: 15px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin: 20px;
+  animation: appearMenu 1s 1.6s ease-in-out both;
+}
+.menu .animMenu__dish--9 {
+  min-width: 300px;
+  height: 60px;
+  background: white;
+  border-radius: 15px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin: 20px;
+  animation: appearMenu 1s 1.8s ease-in-out both;
+}
+.menu .animMenu__dish--10 {
+  min-width: 300px;
+  height: 60px;
+  background: white;
+  border-radius: 15px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin: 20px;
+  animation: appearMenu 1s 2s ease-in-out both;
+}
+.menu .animMenu h6 {
+  margin: 4px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.menu .animMenu p {
+  font-weight: 100;
+  margin: 4px;
+}
+.menu .animMenu aside {
+  position: relative;
+  left: 90%;
+  bottom: 35%;
 }
 
 /*# sourceMappingURL=style.css.map */
