@@ -8,6 +8,68 @@ header{
     }
 }
 
+@keyframes timeLoader {
+    0% {
+          visibility: visible;
+          opacity: 1;
+    }
+
+    80%{
+        opacity: 1;
+    }
+    100% {
+        visibility: hidden;
+        opacity: 0.2;
+    }
+}
+
+.loaderContainer{
+    width: 100%;
+    height: 100%;
+    background: $color-4;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    visibility: hidden;
+    animation: timeLoader 2s ease-in-out both;
+    z-index: 1;
+}
+
+.lds-hourglass {
+    margin: auto;
+    display: inline-block;
+    position: relative;
+    width: auto;
+    height: auto;
+    background-color: $color-4;
+  }
+  .lds-hourglass:after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    margin: 8px;
+    box-sizing: border-box;
+    border: 32px solid $color-primary;
+    border-color: $color-primary transparent $color-secondary transparent;
+    animation: lds-hourglass 2s infinite;
+  }
+  @keyframes lds-hourglass {
+    0% {
+      transform: rotate(0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+      transform: rotate(900deg);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+      transform: rotate(1800deg);
+    }
+  }
+  
+
 .local{
     display: flex;
     align-items: center;
@@ -135,6 +197,12 @@ section {
     background: white;
     border-radius: 20px;
     color: black;
+    box-shadow: 4px 4px 8px #d3d3d3;;
+
+    &:hover {
+        opacity: 0.8;
+        box-shadow: 4px 4px 8px #b8b7b7;
+    }
 
     & img{
         width: 330px;
@@ -166,8 +234,9 @@ section {
         
     
         &:hover{
-            color: #c665cb
-            
+            background: linear-gradient($color-primary, $color-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             
         }
         
@@ -182,7 +251,9 @@ section {
         width: fit-content;
         padding: 5px;
         color: #215b4d
-    }  
+    } 
+
+    
 }
 
 footer{

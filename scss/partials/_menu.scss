@@ -62,7 +62,9 @@ header a{
         padding-right: 1.5rem;
     
         &:hover{
-            color: #c665cb
+            background: linear-gradient($color-primary, $color-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         } 
     }
   
@@ -95,9 +97,14 @@ header a{
     }
 }
 
+
+
+
+
 .menu{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 
     & h5{
         margin-top: 2rem;
@@ -128,15 +135,16 @@ header a{
                     @include dishShape;
                     animation: appearMenu 1s $anim-delay * $i ease-in-out both;
                     &:hover{
-                        
                         cursor: pointer;
-                        text-overflow: ellipsis;
-
+                        
+                        
                         
                             
                         aside{
                             transform: translate(-7rem);
                             transition: transform 0.5s ease;
+                            
+       
                         }
                         .overbox{
                         text-align: center;
@@ -158,7 +166,7 @@ header a{
                                 transform: rotate(360deg);
                                 transition: transform 0.5s ease;  
                             }
-                        } 
+                        }
                         
                     }
                 }
@@ -172,19 +180,29 @@ header a{
             margin: 4px;
             font-size: 18px;
             font-weight: 500;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 70%;
             
         }
 
         & p{
             font-weight: 100;
             margin: 4px;
-
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 70%;
+            
         }
 
         & aside {
             position: relative;
             left: 88%;
             bottom: 35%;
+
+            
 
         }
 
