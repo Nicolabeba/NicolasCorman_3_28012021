@@ -335,30 +335,6 @@ header a {
   -webkit-text-fill-color: transparent;
 }
 
-@keyframes appearMenu {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes moveMenu {
-  0% {
-    transform: scaleY(0.7);
-  }
-  100% {
-    transform: scaleY(1);
-  }
-}
-@keyframes selectMenu {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(1);
-  }
-}
 .menu {
   display: flex;
   flex-direction: column;
@@ -377,14 +353,44 @@ header a {
   margin-left: 1.5rem;
   background-color: #99E2D0;
 }
-.menu .overbox i {
-  visibility: hidden;
+
+@keyframes appearMenu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-.menu .animMenu {
+@keyframes moveMenu {
+  0% {
+    transform: scaleY(0.7);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes retractAnim {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 70%;
+  }
+}
+@keyframes greenboxAnim {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 200px;
+  }
+}
+.animMenu {
   animation: moveMenu 1s;
   transform-origin: bottom;
 }
-.menu .animMenu__dish--1 {
+.animMenu__dish--1 {
   width: 80%;
   height: 60px;
   background: white;
@@ -397,34 +403,30 @@ header a {
   box-shadow: 4px 4px 8px #d3d3d3;
   animation: appearMenu 1s 0.2s ease-in-out both;
 }
-.menu .animMenu__dish--1:hover {
+.animMenu__dish--1:hover {
   cursor: pointer;
 }
-.menu .animMenu__dish--1:hover aside {
-  transform: translate(-7rem);
-  transition: transform 0.5s ease;
-}
-.menu .animMenu__dish--1:hover .overbox {
+.animMenu__dish--1:hover .overBox {
+  visibility: visible;
   text-align: center;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
-  position: relative;
-  bottom: 135%;
-  height: 4.4rem;
-  width: 7rem;
-  margin-left: auto;
+  width: 6rem;
+  height: 60px;
   transform-origin: right;
-  animation: selectMenu 0.5s;
+  animation: greenboxAnim 0.5s both ease;
 }
-.menu .animMenu__dish--1:hover .overbox i {
-  visibility: visible;
+.animMenu__dish--1:hover .overBox i {
   margin-top: 21px;
   color: white;
   font-size: 25px;
   transform: rotate(360deg);
   transition: transform 0.5s ease;
 }
-.menu .animMenu__dish--2 {
+.animMenu__dish--1:hover .dishPresentation {
+  animation: retractAnim 0.5s forwards ease;
+}
+.animMenu__dish--2 {
   width: 80%;
   height: 60px;
   background: white;
@@ -437,34 +439,30 @@ header a {
   box-shadow: 4px 4px 8px #d3d3d3;
   animation: appearMenu 1s 0.4s ease-in-out both;
 }
-.menu .animMenu__dish--2:hover {
+.animMenu__dish--2:hover {
   cursor: pointer;
 }
-.menu .animMenu__dish--2:hover aside {
-  transform: translate(-7rem);
-  transition: transform 0.5s ease;
-}
-.menu .animMenu__dish--2:hover .overbox {
+.animMenu__dish--2:hover .overBox {
+  visibility: visible;
   text-align: center;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
-  position: relative;
-  bottom: 135%;
-  height: 4.4rem;
-  width: 7rem;
-  margin-left: auto;
+  width: 6rem;
+  height: 60px;
   transform-origin: right;
-  animation: selectMenu 0.5s;
+  animation: greenboxAnim 0.5s both ease;
 }
-.menu .animMenu__dish--2:hover .overbox i {
-  visibility: visible;
+.animMenu__dish--2:hover .overBox i {
   margin-top: 21px;
   color: white;
   font-size: 25px;
   transform: rotate(360deg);
   transition: transform 0.5s ease;
 }
-.menu .animMenu__dish--3 {
+.animMenu__dish--2:hover .dishPresentation {
+  animation: retractAnim 0.5s forwards ease;
+}
+.animMenu__dish--3 {
   width: 80%;
   height: 60px;
   background: white;
@@ -477,34 +475,30 @@ header a {
   box-shadow: 4px 4px 8px #d3d3d3;
   animation: appearMenu 1s 0.6s ease-in-out both;
 }
-.menu .animMenu__dish--3:hover {
+.animMenu__dish--3:hover {
   cursor: pointer;
 }
-.menu .animMenu__dish--3:hover aside {
-  transform: translate(-7rem);
-  transition: transform 0.5s ease;
-}
-.menu .animMenu__dish--3:hover .overbox {
+.animMenu__dish--3:hover .overBox {
+  visibility: visible;
   text-align: center;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
-  position: relative;
-  bottom: 135%;
-  height: 4.4rem;
-  width: 7rem;
-  margin-left: auto;
+  width: 6rem;
+  height: 60px;
   transform-origin: right;
-  animation: selectMenu 0.5s;
+  animation: greenboxAnim 0.5s both ease;
 }
-.menu .animMenu__dish--3:hover .overbox i {
-  visibility: visible;
+.animMenu__dish--3:hover .overBox i {
   margin-top: 21px;
   color: white;
   font-size: 25px;
   transform: rotate(360deg);
   transition: transform 0.5s ease;
 }
-.menu .animMenu__dish--4 {
+.animMenu__dish--3:hover .dishPresentation {
+  animation: retractAnim 0.5s forwards ease;
+}
+.animMenu__dish--4 {
   width: 80%;
   height: 60px;
   background: white;
@@ -517,34 +511,30 @@ header a {
   box-shadow: 4px 4px 8px #d3d3d3;
   animation: appearMenu 1s 0.8s ease-in-out both;
 }
-.menu .animMenu__dish--4:hover {
+.animMenu__dish--4:hover {
   cursor: pointer;
 }
-.menu .animMenu__dish--4:hover aside {
-  transform: translate(-7rem);
-  transition: transform 0.5s ease;
-}
-.menu .animMenu__dish--4:hover .overbox {
+.animMenu__dish--4:hover .overBox {
+  visibility: visible;
   text-align: center;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
-  position: relative;
-  bottom: 135%;
-  height: 4.4rem;
-  width: 7rem;
-  margin-left: auto;
+  width: 6rem;
+  height: 60px;
   transform-origin: right;
-  animation: selectMenu 0.5s;
+  animation: greenboxAnim 0.5s both ease;
 }
-.menu .animMenu__dish--4:hover .overbox i {
-  visibility: visible;
+.animMenu__dish--4:hover .overBox i {
   margin-top: 21px;
   color: white;
   font-size: 25px;
   transform: rotate(360deg);
   transition: transform 0.5s ease;
 }
-.menu .animMenu__dish--5 {
+.animMenu__dish--4:hover .dishPresentation {
+  animation: retractAnim 0.5s forwards ease;
+}
+.animMenu__dish--5 {
   width: 80%;
   height: 60px;
   background: white;
@@ -557,34 +547,30 @@ header a {
   box-shadow: 4px 4px 8px #d3d3d3;
   animation: appearMenu 1s 1s ease-in-out both;
 }
-.menu .animMenu__dish--5:hover {
+.animMenu__dish--5:hover {
   cursor: pointer;
 }
-.menu .animMenu__dish--5:hover aside {
-  transform: translate(-7rem);
-  transition: transform 0.5s ease;
-}
-.menu .animMenu__dish--5:hover .overbox {
+.animMenu__dish--5:hover .overBox {
+  visibility: visible;
   text-align: center;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
-  position: relative;
-  bottom: 135%;
-  height: 4.4rem;
-  width: 7rem;
-  margin-left: auto;
+  width: 6rem;
+  height: 60px;
   transform-origin: right;
-  animation: selectMenu 0.5s;
+  animation: greenboxAnim 0.5s both ease;
 }
-.menu .animMenu__dish--5:hover .overbox i {
-  visibility: visible;
+.animMenu__dish--5:hover .overBox i {
   margin-top: 21px;
   color: white;
   font-size: 25px;
   transform: rotate(360deg);
   transition: transform 0.5s ease;
 }
-.menu .animMenu__dish--6 {
+.animMenu__dish--5:hover .dishPresentation {
+  animation: retractAnim 0.5s forwards ease;
+}
+.animMenu__dish--6 {
   width: 80%;
   height: 60px;
   background: white;
@@ -597,34 +583,30 @@ header a {
   box-shadow: 4px 4px 8px #d3d3d3;
   animation: appearMenu 1s 1.2s ease-in-out both;
 }
-.menu .animMenu__dish--6:hover {
+.animMenu__dish--6:hover {
   cursor: pointer;
 }
-.menu .animMenu__dish--6:hover aside {
-  transform: translate(-7rem);
-  transition: transform 0.5s ease;
-}
-.menu .animMenu__dish--6:hover .overbox {
+.animMenu__dish--6:hover .overBox {
+  visibility: visible;
   text-align: center;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
-  position: relative;
-  bottom: 135%;
-  height: 4.4rem;
-  width: 7rem;
-  margin-left: auto;
+  width: 6rem;
+  height: 60px;
   transform-origin: right;
-  animation: selectMenu 0.5s;
+  animation: greenboxAnim 0.5s both ease;
 }
-.menu .animMenu__dish--6:hover .overbox i {
-  visibility: visible;
+.animMenu__dish--6:hover .overBox i {
   margin-top: 21px;
   color: white;
   font-size: 25px;
   transform: rotate(360deg);
   transition: transform 0.5s ease;
 }
-.menu .animMenu__dish--7 {
+.animMenu__dish--6:hover .dishPresentation {
+  animation: retractAnim 0.5s forwards ease;
+}
+.animMenu__dish--7 {
   width: 80%;
   height: 60px;
   background: white;
@@ -637,34 +619,30 @@ header a {
   box-shadow: 4px 4px 8px #d3d3d3;
   animation: appearMenu 1s 1.4s ease-in-out both;
 }
-.menu .animMenu__dish--7:hover {
+.animMenu__dish--7:hover {
   cursor: pointer;
 }
-.menu .animMenu__dish--7:hover aside {
-  transform: translate(-7rem);
-  transition: transform 0.5s ease;
-}
-.menu .animMenu__dish--7:hover .overbox {
+.animMenu__dish--7:hover .overBox {
+  visibility: visible;
   text-align: center;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
-  position: relative;
-  bottom: 135%;
-  height: 4.4rem;
-  width: 7rem;
-  margin-left: auto;
+  width: 6rem;
+  height: 60px;
   transform-origin: right;
-  animation: selectMenu 0.5s;
+  animation: greenboxAnim 0.5s both ease;
 }
-.menu .animMenu__dish--7:hover .overbox i {
-  visibility: visible;
+.animMenu__dish--7:hover .overBox i {
   margin-top: 21px;
   color: white;
   font-size: 25px;
   transform: rotate(360deg);
   transition: transform 0.5s ease;
 }
-.menu .animMenu__dish--8 {
+.animMenu__dish--7:hover .dishPresentation {
+  animation: retractAnim 0.5s forwards ease;
+}
+.animMenu__dish--8 {
   width: 80%;
   height: 60px;
   background: white;
@@ -677,34 +655,30 @@ header a {
   box-shadow: 4px 4px 8px #d3d3d3;
   animation: appearMenu 1s 1.6s ease-in-out both;
 }
-.menu .animMenu__dish--8:hover {
+.animMenu__dish--8:hover {
   cursor: pointer;
 }
-.menu .animMenu__dish--8:hover aside {
-  transform: translate(-7rem);
-  transition: transform 0.5s ease;
-}
-.menu .animMenu__dish--8:hover .overbox {
+.animMenu__dish--8:hover .overBox {
+  visibility: visible;
   text-align: center;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
-  position: relative;
-  bottom: 135%;
-  height: 4.4rem;
-  width: 7rem;
-  margin-left: auto;
+  width: 6rem;
+  height: 60px;
   transform-origin: right;
-  animation: selectMenu 0.5s;
+  animation: greenboxAnim 0.5s both ease;
 }
-.menu .animMenu__dish--8:hover .overbox i {
-  visibility: visible;
+.animMenu__dish--8:hover .overBox i {
   margin-top: 21px;
   color: white;
   font-size: 25px;
   transform: rotate(360deg);
   transition: transform 0.5s ease;
 }
-.menu .animMenu__dish--9 {
+.animMenu__dish--8:hover .dishPresentation {
+  animation: retractAnim 0.5s forwards ease;
+}
+.animMenu__dish--9 {
   width: 80%;
   height: 60px;
   background: white;
@@ -717,34 +691,30 @@ header a {
   box-shadow: 4px 4px 8px #d3d3d3;
   animation: appearMenu 1s 1.8s ease-in-out both;
 }
-.menu .animMenu__dish--9:hover {
+.animMenu__dish--9:hover {
   cursor: pointer;
 }
-.menu .animMenu__dish--9:hover aside {
-  transform: translate(-7rem);
-  transition: transform 0.5s ease;
-}
-.menu .animMenu__dish--9:hover .overbox {
+.animMenu__dish--9:hover .overBox {
+  visibility: visible;
   text-align: center;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
-  position: relative;
-  bottom: 135%;
-  height: 4.4rem;
-  width: 7rem;
-  margin-left: auto;
+  width: 6rem;
+  height: 60px;
   transform-origin: right;
-  animation: selectMenu 0.5s;
+  animation: greenboxAnim 0.5s both ease;
 }
-.menu .animMenu__dish--9:hover .overbox i {
-  visibility: visible;
+.animMenu__dish--9:hover .overBox i {
   margin-top: 21px;
   color: white;
   font-size: 25px;
   transform: rotate(360deg);
   transition: transform 0.5s ease;
 }
-.menu .animMenu__dish--10 {
+.animMenu__dish--9:hover .dishPresentation {
+  animation: retractAnim 0.5s forwards ease;
+}
+.animMenu__dish--10 {
   width: 80%;
   height: 60px;
   background: white;
@@ -757,54 +727,62 @@ header a {
   box-shadow: 4px 4px 8px #d3d3d3;
   animation: appearMenu 1s 2s ease-in-out both;
 }
-.menu .animMenu__dish--10:hover {
+.animMenu__dish--10:hover {
   cursor: pointer;
 }
-.menu .animMenu__dish--10:hover aside {
-  transform: translate(-7rem);
-  transition: transform 0.5s ease;
-}
-.menu .animMenu__dish--10:hover .overbox {
+.animMenu__dish--10:hover .overBox {
+  visibility: visible;
   text-align: center;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
-  position: relative;
-  bottom: 135%;
-  height: 4.4rem;
-  width: 7rem;
-  margin-left: auto;
+  width: 6rem;
+  height: 60px;
   transform-origin: right;
-  animation: selectMenu 0.5s;
+  animation: greenboxAnim 0.5s both ease;
 }
-.menu .animMenu__dish--10:hover .overbox i {
-  visibility: visible;
+.animMenu__dish--10:hover .overBox i {
   margin-top: 21px;
   color: white;
   font-size: 25px;
   transform: rotate(360deg);
   transition: transform 0.5s ease;
 }
-.menu .animMenu h6 {
+.animMenu__dish--10:hover .dishPresentation {
+  animation: retractAnim 0.5s forwards ease;
+}
+
+.positionBoxes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dishPresentation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.dishPresentation .textDish {
+  width: 100%;
+}
+.dishPresentation .textDish h6 {
   margin: 4px;
   font-size: 18px;
   font-weight: 500;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 70%;
+  width: 100%;
 }
-.menu .animMenu p {
+.dishPresentation .textDish p {
   font-weight: 100;
   margin: 4px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 70%;
+  width: 100%;
 }
-.menu .animMenu aside {
-  position: relative;
-  left: 88%;
-  bottom: 35%;
+.dishPresentation aside {
+  margin: 25px 20px 0 20px;
 }
 
 @media screen and (min-width: 1105px) {

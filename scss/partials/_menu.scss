@@ -21,7 +21,7 @@ header a{
     background-color: $color-4;
    
 
-    button {
+    & button {
         width: 180px;
         border-radius: 20px;
         margin: auto;
@@ -60,14 +60,36 @@ header a{
         color: $color-4;
         transition: all 1000ms;
         padding-right: 1.5rem;
+        
     
         &:hover{
             background: linear-gradient($color-primary, $color-secondary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            
         } 
     }
-  
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    & h5{
+        margin-top: 2rem;
+        margin-bottom: 0.2rem;
+        margin-left: 1.5rem;
+        font-size: 1rem;
+        font-weight: 100;
+    }
+
+    & .underLine{
+        width: 40px;
+        height: 4px;
+        margin-left: 1.5rem;
+        background-color:$color-terciary;
+    }
 }
 
 @keyframes appearMenu {
@@ -88,94 +110,82 @@ header a{
     }
 }
 
-@keyframes selectMenu {
-    0% {
-        transform: scaleX(0);  
+@keyframes retractAnim {
+    from {
+      width: 100%;
     }
-    100% {
-        transform: scaleX(1);  
+    to {
+      width: 70%;
     }
-}
+  }
 
-
-
-
-
-.menu{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    & h5{
-        margin-top: 2rem;
-        margin-bottom: 0.2rem;
-        margin-left: 1.5rem;
-        font-size: 1rem;
-        font-weight: 100;
+  @keyframes greenboxAnim {
+    from {
+      width: 0px;
+      
     }
-
-    & .underLine{
-        width: 40px;
-        height: 4px;
-        margin-left: 1.5rem;
-        background-color:$color-terciary;
-
+    to {
+      width: 200px;
     }
-    .overbox i {
-        visibility: hidden;
-    }
+  }
+  
+.animMenu{
+    animation: moveMenu 1s;
+    transform-origin: bottom;
 
-    & .animMenu{
-        animation: moveMenu 1s;
-        transform-origin: bottom;
+    &__dish{
+        @for $i from 1 through $num-dish {
+            &--#{$i} {
+                @include dishShape;
+                animation: appearMenu 1s $anim-delay * $i ease-in-out both;
+                
+                &:hover{
+                    cursor: pointer;
 
-        &__dish{
-            @for $i from 1 through $num-dish {
-                &--#{$i} {
-                    @include dishShape;
-                    animation: appearMenu 1s $anim-delay * $i ease-in-out both;
-                    &:hover{
-                        cursor: pointer;
-                        
-                        
-                        
-                            
-                        aside{
-                            transform: translate(-7rem);
-                            transition: transform 0.5s ease;
-                            
-       
-                        }
-                        .overbox{
+                    & .overBox{
+                        visibility: visible;
                         text-align: center;
                         border-radius: 0 15px 15px 0;
                         background-color: $color-terciary;
-                        position: relative;
-                        bottom: 135%;
-                        height: 4.4rem;
-                        width: 7rem;
-                        margin-left: auto;
+                        width: 6rem;
+                        height: 60px;
                         transform-origin: right;
-                        animation: selectMenu 0.5s;
-
-                            & i{
-                                visibility: visible;
-                                margin-top: 21px;
-                                color: white;
-                                font-size: 25px;
-                                transform: rotate(360deg);
-                                transition: transform 0.5s ease;  
-                            }
-                        }
+                        animation: greenboxAnim 0.5s both ease;
                         
+                        & i{
+                        margin-top: 21px;
+                        color: white;
+                        font-size: 25px;
+                        transform: rotate(360deg);
+                        transition: transform 0.5s ease;
+
+                        }
                     }
+
+                    & .dishPresentation {
+                        animation: retractAnim 0.5s forwards ease;
+                    }
+                    
                 }
             }
-
         }
+    }
+}
 
+.positionBoxes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dishPresentation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+
+    & .textDish {
+        width: 100%;
         
-
         & h6{
             margin: 4px;
             font-size: 18px;
@@ -183,32 +193,26 @@ header a{
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            width: 70%;
+            width: 100%;
             
         }
-
+        
         & p{
             font-weight: 100;
             margin: 4px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            width: 70%;
-            
-        }
-
-        & aside {
-            position: relative;
-            left: 88%;
-            bottom: 35%;
-
-            
-
+            width: 100%;
         }
 
     }
 
+    & aside {
+        margin: 25px 20px 0 20px;
+    }
 }
+
 
 
 
