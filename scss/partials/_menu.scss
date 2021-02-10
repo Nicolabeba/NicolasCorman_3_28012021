@@ -58,12 +58,15 @@ header a{
         -webkit-text-stroke: 1px black;
         font-weight: 800;
         color: $color-4;
-        transition: all 1000ms;
         padding-right: 1.5rem;
+        
+        
         
     
         &:hover{
+            animation: animHeart 1s ease-in-out both;
             background: linear-gradient($color-primary, $color-secondary);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             
@@ -101,6 +104,15 @@ header a{
     }
 }
 
+@keyframes animHeart {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes moveMenu {
     0% {
         transform: scaleY(0.70);   
@@ -115,7 +127,7 @@ header a{
       width: 100%;
     }
     to {
-      width: 70%;
+      width: 50;
     }
   }
 
@@ -125,7 +137,7 @@ header a{
       
     }
     to {
-      width: 200px;
+      width: 100px;
     }
   }
   
@@ -149,7 +161,7 @@ header a{
                         background-color: $color-terciary;
                         width: 6rem;
                         height: 60px;
-                        transform-origin: right;
+                        padding-top: 20px;
                         animation: greenboxAnim 0.5s both ease;
                         
                         & i{

@@ -326,11 +326,12 @@ header a {
   -webkit-text-stroke: 1px black;
   font-weight: 800;
   color: #f4f4f4;
-  transition: all 1000ms;
   padding-right: 1.5rem;
 }
 .headMenu .far:hover {
+  animation: animHeart 1s ease-in-out both;
   background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -362,6 +363,14 @@ header a {
     opacity: 1;
   }
 }
+@keyframes animHeart {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes moveMenu {
   0% {
     transform: scaleY(0.7);
@@ -375,7 +384,7 @@ header a {
     width: 100%;
   }
   to {
-    width: 70%;
+    width: 50;
   }
 }
 @keyframes greenboxAnim {
@@ -383,7 +392,7 @@ header a {
     width: 0px;
   }
   to {
-    width: 200px;
+    width: 100px;
   }
 }
 .animMenu {
@@ -413,7 +422,7 @@ header a {
   background-color: #99E2D0;
   width: 6rem;
   height: 60px;
-  transform-origin: right;
+  padding-top: 20px;
   animation: greenboxAnim 0.5s both ease;
 }
 .animMenu__dish--1:hover .overBox i {
@@ -449,7 +458,7 @@ header a {
   background-color: #99E2D0;
   width: 6rem;
   height: 60px;
-  transform-origin: right;
+  padding-top: 20px;
   animation: greenboxAnim 0.5s both ease;
 }
 .animMenu__dish--2:hover .overBox i {
@@ -485,7 +494,7 @@ header a {
   background-color: #99E2D0;
   width: 6rem;
   height: 60px;
-  transform-origin: right;
+  padding-top: 20px;
   animation: greenboxAnim 0.5s both ease;
 }
 .animMenu__dish--3:hover .overBox i {
@@ -521,7 +530,7 @@ header a {
   background-color: #99E2D0;
   width: 6rem;
   height: 60px;
-  transform-origin: right;
+  padding-top: 20px;
   animation: greenboxAnim 0.5s both ease;
 }
 .animMenu__dish--4:hover .overBox i {
@@ -557,7 +566,7 @@ header a {
   background-color: #99E2D0;
   width: 6rem;
   height: 60px;
-  transform-origin: right;
+  padding-top: 20px;
   animation: greenboxAnim 0.5s both ease;
 }
 .animMenu__dish--5:hover .overBox i {
@@ -593,7 +602,7 @@ header a {
   background-color: #99E2D0;
   width: 6rem;
   height: 60px;
-  transform-origin: right;
+  padding-top: 20px;
   animation: greenboxAnim 0.5s both ease;
 }
 .animMenu__dish--6:hover .overBox i {
@@ -629,7 +638,7 @@ header a {
   background-color: #99E2D0;
   width: 6rem;
   height: 60px;
-  transform-origin: right;
+  padding-top: 20px;
   animation: greenboxAnim 0.5s both ease;
 }
 .animMenu__dish--7:hover .overBox i {
@@ -665,7 +674,7 @@ header a {
   background-color: #99E2D0;
   width: 6rem;
   height: 60px;
-  transform-origin: right;
+  padding-top: 20px;
   animation: greenboxAnim 0.5s both ease;
 }
 .animMenu__dish--8:hover .overBox i {
@@ -701,7 +710,7 @@ header a {
   background-color: #99E2D0;
   width: 6rem;
   height: 60px;
-  transform-origin: right;
+  padding-top: 20px;
   animation: greenboxAnim 0.5s both ease;
 }
 .animMenu__dish--9:hover .overBox i {
@@ -737,7 +746,7 @@ header a {
   background-color: #99E2D0;
   width: 6rem;
   height: 60px;
-  transform-origin: right;
+  padding-top: 20px;
   animation: greenboxAnim 0.5s both ease;
 }
 .animMenu__dish--10:hover .overBox i {
