@@ -30,7 +30,9 @@ header a{
         background: linear-gradient($color-secondary, $color-primary);
         border: none;
         font-size: 1rem;
-        margin: 2rem auto 2rem auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
         
 
 
@@ -127,7 +129,7 @@ header a{
       width: 100%;
     }
     to {
-      width: 50;
+      width: 80%;
     }
   }
 
@@ -140,6 +142,23 @@ header a{
       width: 100px;
     }
   }
+
+  @keyframes checkboxAnim {
+    from {
+      transform: rotate(0deg);
+      opacity: 0;
+      
+    }
+    to {
+      transform: rotate(360deg);
+      opacity: 1;
+    }
+  }
+
+
+  .overBox{
+      display: none;
+  }
   
 .animMenu{
     animation: moveMenu 1s;
@@ -148,41 +167,12 @@ header a{
     &__dish{
         @for $i from 1 through $num-dish {
             &--#{$i} {
-                @include dishShape;
-                animation: appearMenu 1s $anim-delay * $i ease-in-out both;
-                
-                &:hover{
-                    cursor: pointer;
-
-                    & .overBox{
-                        visibility: visible;
-                        text-align: center;
-                        border-radius: 0 15px 15px 0;
-                        background-color: $color-terciary;
-                        width: 6rem;
-                        height: 60px;
-                        padding-top: 20px;
-                        animation: greenboxAnim 0.5s both ease;
-                        
-                        & i{
-                        margin-top: 21px;
-                        color: white;
-                        font-size: 25px;
-                        transform: rotate(360deg);
-                        transition: transform 0.5s ease;
-
-                        }
-                    }
-
-                    & .dishPresentation {
-                        animation: retractAnim 0.5s forwards ease;
-                    }
-                    
-                }
+                animation: appearMenu 1s $anim-delay * $i ease-in-out both; 
             }
         }
     }
 }
+
 
 .positionBoxes {
     display: flex;
@@ -193,10 +183,43 @@ header a{
     display: flex;
     justify-content: space-between;
     width: 100%;
+    @include dishShape;
+
+    &:hover{
+        cursor: pointer;
+
+        & .overBox{
+            display: block;
+            width: 10%;
+            min-width: 40px;
+            text-align: center;
+            border-radius: 0 15px 15px 0;
+            background-color: $color-terciary;
+            height: 60px;
+            animation: greenboxAnim 0.5s ease both;
+            
+            & i{
+            display: block;
+            margin-top: 21px;
+            color: white;
+            font-size: 25px;
+            transform: rotate(360deg);
+            animation: checkboxAnim 0.5s ease both;
+            
+            }
+
+        }
+
+        & .dishPresentation {
+            animation: retractAnim 0.5s ease both;
+
+        }
+        
+    }
 
 
     & .textDish {
-        width: 100%;
+        width: 90%;
         
         & h6{
             margin: 4px;
@@ -205,7 +228,9 @@ header a{
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            width: 100%;
+            width: 80%;
+            padding-top: 5px;
+            padding-left: 5px;
             
         }
         
@@ -215,13 +240,16 @@ header a{
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            width: 100%;
+            width: 80%;
+            padding-left: 5px;
         }
 
     }
 
     & aside {
-        margin: 25px 20px 0 20px;
+        width: 15%; 
+        padding-top: 30px;
+        padding-right: 10px;
     }
 }
 

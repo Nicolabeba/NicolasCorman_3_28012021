@@ -10,14 +10,12 @@ $num-dish: 10;
 $anim-delay: 2s/$num-dish;
 
 @mixin dishShape{
-    width: 80%;
+    max-width: 80%;
     height: 60px;
     background: white;
     border-radius: 15px;
     text-decoration: none;
     color: black;
-    padding: 10px 0px 10px 10px;
-    padding-bottom: 0px;
     margin: 20px auto 20px auto;
     box-shadow: 4px 4px 8px #d3d3d3;
     
