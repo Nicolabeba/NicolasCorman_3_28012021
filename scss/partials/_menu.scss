@@ -55,22 +55,20 @@ header a{
         margin-bottom: 0px;
     }
 
-    & .far {
+    & i {
         font-size: 25px;
         -webkit-text-stroke: 1px black;
-        font-weight: 800;
         color: $color-4;
         padding-right: 1.5rem;
         
-        
-        
     
         &:hover{
-            animation: animHeart 1s ease-in-out both;
+            cursor: pointer;
             background: linear-gradient($color-primary, $color-secondary);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: animHeart 0.5s ease-in-out;
             
         } 
     }
@@ -97,49 +95,49 @@ header a{
     }
 }
 
-@keyframes appearMenu {
-    0% {
-        opacity: 0;
+@keyframes animHeart {
+    from {
+       background: $color-4;
+       background-clip: text;
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+               
     }
-    100% {
-        opacity: 1;
+
+    to {
+        color: linear-gradient($color-primary, $color-secondary);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+           
     }
 }
 
-@keyframes animHeart {
-    0% {
+@keyframes appearMenu {
+    from {
         opacity: 0;
     }
-    100% {
+    to {
         opacity: 1;
     }
 }
 
 @keyframes moveMenu {
-    0% {
+    from {
         transform: scaleY(0.70);   
     }
-    100% {
+    to {
         transform: scaleY(1);
     }
 }
 
-@keyframes retractAnim {
-    from {
-      width: 100%;
-    }
-    to {
-      width: 80%;
-    }
-  }
-
   @keyframes greenboxAnim {
     from {
-      width: 0px;
+      transform: scaleX(0);
       
     }
     to {
-      width: 100px;
+    transform: scaleX(1);
     }
   }
 
@@ -155,6 +153,16 @@ header a{
     }
   }
 
+  @keyframes retractAnim {
+    from {
+        transform: scaleX(1);
+        
+      }
+      to {
+      transform: scaleX(0.7);
+      }
+    }
+
 
   .overBox{
       display: none;
@@ -163,20 +171,14 @@ header a{
 .animMenu{
     animation: moveMenu 1s;
     transform-origin: bottom;
-
     &__dish{
         @for $i from 1 through $num-dish {
             &--#{$i} {
-                animation: appearMenu 1s $anim-delay * $i ease-in-out both; 
+                animation: appearMenu 0.6s $anim-delay * $i ease-in-out both; 
+                
             }
         }
     }
-}
-
-
-.positionBoxes {
-    display: flex;
-    justify-content: space-between;
 }
 
 .dishPresentation {
@@ -184,9 +186,18 @@ header a{
     justify-content: space-between;
     width: 100%;
     @include dishShape;
+    
 
     &:hover{
         cursor: pointer;
+        
+        & .dishPresentation{
+        
+        animation: retractAnim 0.5s ease both;
+        transform-origin: left;
+
+        }
+        
 
         & .overBox{
             display: block;
@@ -196,27 +207,25 @@ header a{
             border-radius: 0 15px 15px 0;
             background-color: $color-terciary;
             height: 60px;
-            animation: greenboxAnim 0.5s ease both;
+            width: 7em;
+            transform-origin: right;
+            animation: greenboxAnim 0.5s ease-in-out;
+            
+
             
             & i{
             display: block;
             margin-top: 21px;
             color: white;
             font-size: 25px;
-            transform: rotate(360deg);
-            animation: checkboxAnim 0.5s ease both;
+            animation: checkboxAnim 0.5s ease;
             
             }
 
-        }
-
-        & .dishPresentation {
-            animation: retractAnim 0.5s ease both;
-
+           
         }
         
     }
-
 
     & .textDish {
         width: 90%;
@@ -228,7 +237,7 @@ header a{
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            width: 80%;
+            width: 90%;
             padding-top: 5px;
             padding-left: 5px;
             
@@ -240,14 +249,14 @@ header a{
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            width: 80%;
+            width: 90%;
             padding-left: 5px;
         }
 
     }
 
     & aside {
-        width: 15%; 
+        width: 10%; 
         padding-top: 30px;
         padding-right: 10px;
     }
