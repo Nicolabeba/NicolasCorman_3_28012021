@@ -405,12 +405,12 @@ header a {
     opacity: 1;
   }
 }
-@keyframes retractAnim {
+@keyframes priceAnim {
   from {
-    transform: scaleX(1);
+    transform: translateX(0%);
   }
   to {
-    transform: scaleX(0.7);
+    transform: translateX(-15%);
   }
 }
 .overBox {
@@ -421,35 +421,46 @@ header a {
   animation: moveMenu 1s;
   transform-origin: bottom;
 }
-.animMenu__dish--1 {
+
+.dish--1 {
   animation: appearMenu 0.6s 0.2s ease-in-out both;
 }
-.animMenu__dish--2 {
+.dish--2 {
   animation: appearMenu 0.6s 0.4s ease-in-out both;
 }
-.animMenu__dish--3 {
+.dish--3 {
   animation: appearMenu 0.6s 0.6s ease-in-out both;
 }
-.animMenu__dish--4 {
+.dish--4 {
   animation: appearMenu 0.6s 0.8s ease-in-out both;
 }
-.animMenu__dish--5 {
+.dish--5 {
   animation: appearMenu 0.6s 1s ease-in-out both;
 }
-.animMenu__dish--6 {
+.dish--6 {
   animation: appearMenu 0.6s 1.2s ease-in-out both;
 }
-.animMenu__dish--7 {
+.dish--7 {
   animation: appearMenu 0.6s 1.4s ease-in-out both;
 }
-.animMenu__dish--8 {
+.dish--8 {
   animation: appearMenu 0.6s 1.6s ease-in-out both;
 }
-.animMenu__dish--9 {
+.dish--9 {
   animation: appearMenu 0.6s 1.8s ease-in-out both;
 }
-.animMenu__dish--10 {
+.dish--10 {
   animation: appearMenu 0.6s 2s ease-in-out both;
+}
+
+.price {
+  position: relative;
+  left: 80%;
+  bottom: 25px;
+}
+
+.dishPresentation:hover .price {
+  animation: priceAnim 0.5s ease-in-out both;
 }
 
 .dishPresentation {
@@ -462,25 +473,20 @@ header a {
   border-radius: 15px;
   text-decoration: none;
   color: black;
-  margin: 20px auto 20px auto;
+  margin: auto;
   box-shadow: 4px 4px 8px #d3d3d3;
 }
 .dishPresentation:hover {
   cursor: pointer;
 }
-.dishPresentation:hover .dishPresentation {
-  animation: retractAnim 0.5s ease both;
-  transform-origin: left;
-}
 .dishPresentation:hover .overBox {
   display: block;
-  width: 10%;
+  width: 20%;
   min-width: 40px;
   text-align: center;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
   height: 60px;
-  width: 7em;
   transform-origin: right;
   animation: greenboxAnim 0.5s ease-in-out;
 }
@@ -489,7 +495,7 @@ header a {
   margin-top: 21px;
   color: white;
   font-size: 25px;
-  animation: checkboxAnim 0.5s ease;
+  animation: checkboxAnim 0.5s ease-in-out;
 }
 .dishPresentation .textDish {
   width: 90%;
@@ -513,11 +519,6 @@ header a {
   white-space: nowrap;
   width: 90%;
   padding-left: 5px;
-}
-.dishPresentation aside {
-  width: 10%;
-  padding-top: 30px;
-  padding-right: 10px;
 }
 
 @media screen and (min-width: 1105px) {

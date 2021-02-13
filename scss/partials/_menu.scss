@@ -133,11 +133,11 @@ header a{
 
   @keyframes greenboxAnim {
     from {
-      transform: scaleX(0);
+        transform: scaleX(0);
       
     }
     to {
-    transform: scaleX(1);
+        transform: scaleX(1);
     }
   }
 
@@ -153,16 +153,17 @@ header a{
     }
   }
 
-  @keyframes retractAnim {
+  @keyframes priceAnim {
     from {
-        transform: scaleX(1);
-        
-      }
-      to {
-      transform: scaleX(0.7);
-      }
+      transform: translateX(0%);
+      
+      
     }
-
+    to {
+      transform: translateX(-15%);
+      
+    }
+  }
 
   .overBox{
       display: none;
@@ -171,43 +172,46 @@ header a{
 .animMenu{
     animation: moveMenu 1s;
     transform-origin: bottom;
-    &__dish{
-        @for $i from 1 through $num-dish {
-            &--#{$i} {
-                animation: appearMenu 0.6s $anim-delay * $i ease-in-out both; 
+}
+    
+.dish{
+    @for $i from 1 through $num-dish {
+        &--#{$i} {
+            animation: appearMenu 0.6s $anim-delay * $i ease-in-out both; 
+           
                 
             }
-        }
+        
     }
+}
+
+.price{
+    position: relative;
+    left: 80%;
+    bottom: 25px;
+}
+
+.dishPresentation:hover .price {
+    animation: priceAnim 0.5s ease-in-out both;
 }
 
 .dishPresentation {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    @include dishShape;
-    
+    @include dishShape;    
 
     &:hover{
         cursor: pointer;
         
-        & .dishPresentation{
-        
-        animation: retractAnim 0.5s ease both;
-        transform-origin: left;
-
-        }
-        
-
         & .overBox{
             display: block;
-            width: 10%;
+            width: 20%;
             min-width: 40px;
             text-align: center;
             border-radius: 0 15px 15px 0;
             background-color: $color-terciary;
             height: 60px;
-            width: 7em;
             transform-origin: right;
             animation: greenboxAnim 0.5s ease-in-out;
             
@@ -218,10 +222,9 @@ header a{
             margin-top: 21px;
             color: white;
             font-size: 25px;
-            animation: checkboxAnim 0.5s ease;
+            animation: checkboxAnim 0.5s ease-in-out;
             
             }
-
            
         }
         
@@ -254,12 +257,7 @@ header a{
         }
 
     }
-
-    & aside {
-        width: 10%; 
-        padding-top: 30px;
-        padding-right: 10px;
-    }
+   
 }
 
 
