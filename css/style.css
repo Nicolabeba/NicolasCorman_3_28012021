@@ -299,14 +299,13 @@ header a {
   width: 180px;
   border-radius: 20px;
   margin: auto;
+  margin-top: 40px;
   padding: 13px;
   color: white;
   background: linear-gradient(#FF79DA, #9356DC);
   border: none;
   font-size: 1rem;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 .menuContainer button:hover {
   cursor: pointer;
@@ -319,23 +318,28 @@ header a {
   align-items: center;
   justify-content: space-between;
 }
-.headMenu h3 {
-  padding-top: 0px;
-  margin-bottom: 0px;
-}
 .headMenu i {
   font-size: 25px;
+  background: #f4f4f4;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px black;
-  color: #f4f4f4;
-  padding-right: 1.5rem;
+  margin-right: 1.5rem;
+  cursor: pointer;
 }
 .headMenu i:hover {
-  cursor: pointer;
+  font-size: 25px;
+  -webkit-text-stroke: 1px black;
+  margin-right: 1.5rem;
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: animHeart 0.5s ease-in-out;
+}
+.headMenu h3 {
+  padding-top: 0px;
+  margin-bottom: 0px;
 }
 
 .menu {
@@ -357,20 +361,6 @@ header a {
   background-color: #99E2D0;
 }
 
-@keyframes animHeart {
-  from {
-    background: #f4f4f4;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  to {
-    color: linear-gradient(#9356DC, #FF79DA);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
 @keyframes appearMenu {
   from {
     opacity: 0;
@@ -387,14 +377,6 @@ header a {
     transform: scaleY(1);
   }
 }
-@keyframes greenboxAnim {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
 @keyframes checkboxAnim {
   from {
     transform: rotate(0deg);
@@ -405,21 +387,15 @@ header a {
     opacity: 1;
   }
 }
-@keyframes priceAnim {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-15%);
-  }
-}
-.overBox {
-  display: none;
-}
-
 .animMenu {
   animation: moveMenu 1s;
   transform-origin: bottom;
+}
+
+.overBox {
+  visibility: hidden;
+  width: 0;
+  transition: width 0.5s ease-out;
 }
 
 .dish--1 {
@@ -453,16 +429,6 @@ header a {
   animation: appearMenu 0.6s 2s ease-in-out both;
 }
 
-.price {
-  position: relative;
-  left: 80%;
-  bottom: 25px;
-}
-
-.dishPresentation:hover .price {
-  animation: priceAnim 0.5s ease-in-out both;
-}
-
 .dishPresentation {
   display: flex;
   justify-content: space-between;
@@ -473,22 +439,20 @@ header a {
   border-radius: 15px;
   text-decoration: none;
   color: black;
-  margin: auto;
+  margin: 1em auto 1em auto;
   box-shadow: 4px 4px 8px #d3d3d3;
 }
 .dishPresentation:hover {
   cursor: pointer;
 }
 .dishPresentation:hover .overBox {
-  display: block;
   width: 20%;
-  min-width: 40px;
   text-align: center;
   border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
   height: 60px;
-  transform-origin: right;
-  animation: greenboxAnim 0.5s ease-in-out;
+  margin-left: 10px;
+  visibility: visible;
 }
 .dishPresentation:hover .overBox i {
   display: block;
@@ -498,7 +462,7 @@ header a {
   animation: checkboxAnim 0.5s ease-in-out;
 }
 .dishPresentation .textDish {
-  width: 90%;
+  width: 80%;
 }
 .dishPresentation .textDish h6 {
   margin: 4px;
@@ -519,6 +483,10 @@ header a {
   white-space: nowrap;
   width: 90%;
   padding-left: 5px;
+}
+.dishPresentation aside {
+  margin-top: 35px;
+  margin-right: 3px;
 }
 
 @media screen and (min-width: 1105px) {

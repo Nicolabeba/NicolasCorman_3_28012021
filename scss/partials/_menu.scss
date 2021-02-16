@@ -21,20 +21,17 @@ header a{
     background-color: $color-4;
    
 
-    & button {
+    button {
         width: 180px;
         border-radius: 20px;
         margin: auto;
+        margin-top: 40px;
         padding: 13px;
         color: white;
         background: linear-gradient($color-secondary, $color-primary);
         border: none;
         font-size: 1rem;
         display: block;
-        margin-left: auto;
-        margin-right: auto;
-        
-
 
         &:hover{
             cursor: pointer;
@@ -49,29 +46,39 @@ header a{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 
-    & h3{
+    i {
+        font-size: 25px;
+        background: $color-4;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px black;
+        margin-right: 1.5rem;
+        cursor: pointer;
+        
+        
+
+        
+
+        &:hover {
+        font-size: 25px;
+        -webkit-text-stroke: 1px black;
+        margin-right: 1.5rem;
+        background: linear-gradient($color-primary, $color-secondary);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+               
+        } 
+    }
+
+    h3{
         padding-top: 0px;
         margin-bottom: 0px;
     }
 
-    & i {
-        font-size: 25px;
-        -webkit-text-stroke: 1px black;
-        color: $color-4;
-        padding-right: 1.5rem;
-        
-    
-        &:hover{
-            cursor: pointer;
-            background: linear-gradient($color-primary, $color-secondary);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: animHeart 0.5s ease-in-out;
-            
-        } 
-    }
 }
 
 .menu{
@@ -79,7 +86,7 @@ header a{
     flex-direction: column;
     justify-content: space-around;
 
-    & h5{
+    h5{
         margin-top: 2rem;
         margin-bottom: 0.2rem;
         margin-left: 1.5rem;
@@ -87,29 +94,11 @@ header a{
         font-weight: 100;
     }
 
-    & .underLine{
+    .underLine{
         width: 40px;
         height: 4px;
         margin-left: 1.5rem;
         background-color:$color-terciary;
-    }
-}
-
-@keyframes animHeart {
-    from {
-       background: $color-4;
-       background-clip: text;
-       -webkit-background-clip: text;
-       -webkit-text-fill-color: transparent;
-               
-    }
-
-    to {
-        color: linear-gradient($color-primary, $color-secondary);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-           
     }
 }
 
@@ -131,16 +120,7 @@ header a{
     }
 }
 
-  @keyframes greenboxAnim {
-    from {
-        transform: scaleX(0);
-      
-    }
-    to {
-        transform: scaleX(1);
-    }
-  }
-
+ 
   @keyframes checkboxAnim {
     from {
       transform: rotate(0deg);
@@ -153,71 +133,48 @@ header a{
     }
   }
 
-  @keyframes priceAnim {
-    from {
-      transform: translateX(0%);
-      
-      
-    }
-    to {
-      transform: translateX(-15%);
-      
-    }
-  }
-
-  .overBox{
-      display: none;
-  }
-  
 .animMenu{
     animation: moveMenu 1s;
     transform-origin: bottom;
+}
+
+.overBox{
+    visibility: hidden;
+    width: 0;
+    transition: width 0.5s ease-out;
 }
     
 .dish{
     @for $i from 1 through $num-dish {
         &--#{$i} {
             animation: appearMenu 0.6s $anim-delay * $i ease-in-out both; 
-           
-                
             }
         
     }
-}
-
-.price{
-    position: relative;
-    left: 80%;
-    bottom: 25px;
-}
-
-.dishPresentation:hover .price {
-    animation: priceAnim 0.5s ease-in-out both;
 }
 
 .dishPresentation {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    @include dishShape;    
+    @include dishShape;  
+    
 
     &:hover{
         cursor: pointer;
+
         
-        & .overBox{
-            display: block;
+        .overBox{
             width: 20%;
-            min-width: 40px;
             text-align: center;
             border-radius: 0 15px 15px 0;
             background-color: $color-terciary;
             height: 60px;
-            transform-origin: right;
-            animation: greenboxAnim 0.5s ease-in-out;
+            margin-left: 10px;
+            visibility: visible;
             
-
-            
-            & i{
+    
+            i{
             display: block;
             margin-top: 21px;
             color: white;
@@ -230,10 +187,11 @@ header a{
         
     }
 
-    & .textDish {
-        width: 90%;
+    .textDish {
+        width: 80%;
         
-        & h6{
+        
+        h6{
             margin: 4px;
             font-size: 18px;
             font-weight: 500;
@@ -246,7 +204,7 @@ header a{
             
         }
         
-        & p{
+        p{
             font-weight: 100;
             margin: 4px;
             overflow: hidden;
@@ -255,6 +213,12 @@ header a{
             width: 90%;
             padding-left: 5px;
         }
+
+    }
+
+    aside {
+        margin-top: 35px;
+        margin-right: 3px;
 
     }
    
