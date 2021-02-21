@@ -31,7 +31,7 @@ header{
     justify-content: center;
     position: fixed;
     visibility: hidden;
-    animation: timeLoader 2s ease-in-out both;
+    animation: timeLoader 1.5s ease-in-out both;
     z-index: 1;
 }
 
@@ -53,7 +53,7 @@ header{
     box-sizing: border-box;
     border: 32px solid $color-primary;
     border-color: $color-primary transparent $color-secondary transparent;
-    animation: lds-hourglass 2s infinite;
+    animation: lds-hourglass 1.5s infinite;
   }
   @keyframes lds-hourglass {
     0% {

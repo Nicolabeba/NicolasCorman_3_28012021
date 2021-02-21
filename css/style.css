@@ -4,10 +4,6 @@
   outline: 0;
 }
 
-::-moz-placeholder {
-  opacity: 1;
-}
-
 body {
   margin: 0px;
   font-family: "Roboto", sans-serif;
@@ -45,7 +41,7 @@ header img {
   justify-content: center;
   position: fixed;
   visibility: hidden;
-  animation: timeLoader 2s ease-in-out both;
+  animation: timeLoader 1.5s ease-in-out both;
   z-index: 1;
 }
 
@@ -68,7 +64,7 @@ header img {
   box-sizing: border-box;
   border: 32px solid #9356DC;
   border-color: #9356DC transparent #FF79DA transparent;
-  animation: lds-hourglass 2s infinite;
+  animation: lds-hourglass 1.5s infinite;
 }
 
 @keyframes lds-hourglass {
@@ -285,6 +281,8 @@ header a {
 }
 .image img {
   width: 100%;
+  max-height: 30vh;
+  object-fit: cover;
 }
 
 .menuContainer {
@@ -320,22 +318,17 @@ header a {
 }
 .headMenu i {
   font-size: 25px;
-  background: #f4f4f4;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #f4f4f4;
   -webkit-text-stroke: 1px black;
   margin-right: 1.5rem;
   cursor: pointer;
+  transition: color 0.5s;
 }
 .headMenu i:hover {
   font-size: 25px;
   -webkit-text-stroke: 1px black;
   margin-right: 1.5rem;
-  background: linear-gradient(#9356DC, #FF79DA);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #bf61b9;
 }
 .headMenu h3 {
   padding-top: 0px;
@@ -388,52 +381,53 @@ header a {
   }
 }
 .animMenu {
-  animation: moveMenu 1s;
+  animation: moveMenu 1.5s;
   transform-origin: bottom;
 }
 
 .overBox {
-  visibility: hidden;
   width: 0;
-  transition: width 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.overBox i {
+  visibility: hidden;
 }
 
 .dish--1 {
-  animation: appearMenu 0.6s 0.2s ease-in-out both;
+  animation: appearMenu 1s 0.15s ease-in-out both;
 }
 .dish--2 {
-  animation: appearMenu 0.6s 0.4s ease-in-out both;
+  animation: appearMenu 1s 0.3s ease-in-out both;
 }
 .dish--3 {
-  animation: appearMenu 0.6s 0.6s ease-in-out both;
+  animation: appearMenu 1s 0.45s ease-in-out both;
 }
 .dish--4 {
-  animation: appearMenu 0.6s 0.8s ease-in-out both;
+  animation: appearMenu 1s 0.6s ease-in-out both;
 }
 .dish--5 {
-  animation: appearMenu 0.6s 1s ease-in-out both;
+  animation: appearMenu 1s 0.75s ease-in-out both;
 }
 .dish--6 {
-  animation: appearMenu 0.6s 1.2s ease-in-out both;
+  animation: appearMenu 1s 0.9s ease-in-out both;
 }
 .dish--7 {
-  animation: appearMenu 0.6s 1.4s ease-in-out both;
+  animation: appearMenu 1s 1.05s ease-in-out both;
 }
 .dish--8 {
-  animation: appearMenu 0.6s 1.6s ease-in-out both;
+  animation: appearMenu 1s 1.2s ease-in-out both;
 }
 .dish--9 {
-  animation: appearMenu 0.6s 1.8s ease-in-out both;
+  animation: appearMenu 1s 1.35s ease-in-out both;
 }
 .dish--10 {
-  animation: appearMenu 0.6s 2s ease-in-out both;
+  animation: appearMenu 1s 1.5s ease-in-out both;
 }
 
 .dishPresentation {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  max-width: 80%;
+  width: 80%;
   height: 60px;
   background: white;
   border-radius: 15px;
@@ -452,17 +446,18 @@ header a {
   background-color: #99E2D0;
   height: 60px;
   margin-left: 10px;
-  visibility: visible;
 }
 .dishPresentation:hover .overBox i {
   display: block;
+  visibility: visible;
   margin-top: 21px;
   color: white;
   font-size: 25px;
-  animation: checkboxAnim 0.5s ease-in-out;
+  animation: checkboxAnim 0.5s ease-out;
 }
 .dishPresentation .textDish {
-  width: 80%;
+  width: 100%;
+  min-width: 50%;
 }
 .dishPresentation .textDish h6 {
   margin: 4px;
@@ -471,37 +466,27 @@ header a {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 90%;
-  padding-top: 5px;
-  padding-left: 5px;
+  width: 100%;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 .dishPresentation .textDish p {
   font-weight: 100;
-  margin: 4px;
+  margin: 4px 0px 4px 5px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 90%;
-  padding-left: 5px;
+  width: 100%;
 }
 .dishPresentation aside {
-  margin-top: 35px;
-  margin-right: 3px;
+  margin: 35px 20px 20px 10px;
+  width: 5%;
 }
 
 @media screen and (min-width: 1105px) {
   body {
     max-width: 1105px;
     margin: auto;
-  }
-}
-@media screen and (min-width: 730px) {
-  .image {
-    height: 40vw;
-    object-fit: cover;
-    position: relative;
-    bottom: 9rem;
-    z-index: -1;
   }
 }
 

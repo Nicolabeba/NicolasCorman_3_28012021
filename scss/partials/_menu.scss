@@ -9,6 +9,8 @@ header a{
     padding-bottom: 0px;
     & img{
     width: 100%;
+    max-height: 30vh;
+    object-fit: cover;
     }
 }
 
@@ -46,30 +48,20 @@ header a{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
 
     i {
         font-size: 25px;
-        background: $color-4;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: $color-4;
         -webkit-text-stroke: 1px black;
         margin-right: 1.5rem;
-        cursor: pointer;
-        
-        
-
-        
+        cursor: pointer; 
+        transition: color 0.5s;   
 
         &:hover {
         font-size: 25px;
         -webkit-text-stroke: 1px black;
         margin-right: 1.5rem;
-        background: linear-gradient($color-primary, $color-secondary);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #bf61b9;
                
         } 
     }
@@ -134,20 +126,24 @@ header a{
   }
 
 .animMenu{
-    animation: moveMenu 1s;
+    animation: moveMenu 1.5s;
     transform-origin: bottom;
 }
 
 .overBox{
-    visibility: hidden;
     width: 0;
-    transition: width 0.5s ease-out;
+    transition: all 0.5s ease-out;  
+    
+    i {
+        visibility: hidden;
+    }
 }
     
 .dish{
     @for $i from 1 through $num-dish {
         &--#{$i} {
-            animation: appearMenu 0.6s $anim-delay * $i ease-in-out both; 
+            animation: appearMenu 1s $anim-delay * $i ease-in-out both; 
+            
             }
         
     }
@@ -156,7 +152,6 @@ header a{
 .dishPresentation {
     display: flex;
     justify-content: space-between;
-    width: 100%;
     @include dishShape;  
     
 
@@ -171,16 +166,16 @@ header a{
             background-color: $color-terciary;
             height: 60px;
             margin-left: 10px;
-            visibility: visible;
+            
             
     
             i{
             display: block;
+            visibility: visible;
             margin-top: 21px;
             color: white;
             font-size: 25px;
-            animation: checkboxAnim 0.5s ease-in-out;
-            
+            animation: checkboxAnim 0.5s ease-out;
             }
            
         }
@@ -188,7 +183,8 @@ header a{
     }
 
     .textDish {
-        width: 80%;
+        width: 100%;
+        min-width: 50%;
         
         
         h6{
@@ -198,28 +194,27 @@ header a{
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            width: 90%;
-            padding-top: 5px;
-            padding-left: 5px;
+            width: 100%;
+            margin-top: 5px;
+            margin-left: 5px;
             
         }
         
         p{
             font-weight: 100;
-            margin: 4px;
+            margin: 4px 0px 4px 5px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            width: 90%;
-            padding-left: 5px;
+            width: 100%;
+            
         }
 
     }
 
     aside {
-        margin-top: 35px;
-        margin-right: 3px;
-
+        margin: 35px 20px 20px 10px;
+        width: 5%;
     }
    
 }

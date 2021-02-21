@@ -7,10 +7,10 @@ $color-secondary:#FF79DA;
 $color-terciary:#99E2D0;
 $color-4:#f4f4f4;
 $num-dish: 10;
-$anim-delay: 2s/$num-dish;
+$anim-delay: 1.5s/$num-dish;
 
 @mixin dishShape{
-    max-width: 80%;
+    width: 80%;
     height: 60px;
     background: white;
     border-radius: 15px;
@@ -25,9 +25,6 @@ $anim-delay: 2s/$num-dish;
     outline: 0;
 }
 
-::-moz-placeholder {
-    opacity: 1;
-}
 
 body{
     margin: 0px;
@@ -47,12 +44,4 @@ body{
 
 }
 
-@media screen and (min-width:730px) {
-    .image {
-        height: 40vw;
-        object-fit: cover;
-        position: relative;
-        bottom: 9rem;
-        z-index: -1;
-    }
-}
+
