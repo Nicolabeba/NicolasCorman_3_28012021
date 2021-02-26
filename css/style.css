@@ -40,15 +40,16 @@ header img {
   display: flex;
   justify-content: center;
   position: fixed;
+  left: 0;
   visibility: hidden;
   animation: timeLoader 1.5s ease-in-out both;
   z-index: 1;
 }
 
 .lds-hourglass {
-  margin: auto;
   display: inline-block;
   position: relative;
+  margin: auto;
   width: auto;
   height: auto;
   background-color: #f4f4f4;
@@ -466,7 +467,6 @@ header a {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 100%;
   margin-top: 5px;
   margin-left: 5px;
 }
@@ -476,7 +476,6 @@ header a {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 100%;
 }
 .dishPresentation aside {
   margin: 35px 20px 20px 10px;
