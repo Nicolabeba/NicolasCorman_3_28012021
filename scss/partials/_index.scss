@@ -30,13 +30,13 @@ header{
     display: flex;
     justify-content: center;
     position: fixed;
+    left: 0;
     visibility: hidden;
     animation: timeLoader 1.5s ease-in-out both;
     z-index: 1;
 }
 
 .lds-hourglass {
-    margin: auto;
     display: inline-block;
     position: relative;
     width: auto;
